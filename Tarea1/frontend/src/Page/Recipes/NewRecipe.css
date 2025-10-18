@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-.form-card .form-form {
+.form-container.new-recipe-page .form-card .form-form {
   max-width: 760px; /* limit content width so inputs don't stretch too much */
   margin: 0 auto;
 }
@@ -85,36 +85,36 @@
 }
 
 /* Make the form sit higher on the page for this route */
-.form-container.login {
+.form-container.new-recipe-page {
   align-items: flex-start;
   padding-top: 2px !important;
   padding-bottom: 2px !important;
 }
 
 /* Reduce vertical spacing in the form so it fits better */
-.form-card .form-form {
+.form-container.new-recipe-page .form-card .form-form {
   gap: 10px;
 }
-.form-card .form-title {
+.form-container.new-recipe-page .form-card .form-title {
   font-size: 1.45rem;
   margin-bottom: 6px;
 }
 
 /* Remove extra top margin in header only for this card */
-.form-container.login .form-card.new-recipe-card {
+.form-container.new-recipe-page .form-card.new-recipe-card {
   margin-top: 0 !important;
 }
-.form-container.login .form-header {
+.form-container.new-recipe-page .form-header {
   margin-top: 6px !important;
   margin-bottom: 6px !important;
 }
 
 /* lift the card a bit more on large screens */
 @media (min-width: 900px) {
-  .form-container.login .form-card.new-recipe-card {
+  .form-container.new-recipe-page .form-card.new-recipe-card {
     margin-top: -28px !important;
   }
-  .form-container.login {
+  .form-container.new-recipe-page {
     padding-top: 0 !important;
   }
 }

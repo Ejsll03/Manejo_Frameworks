@@ -89,7 +89,7 @@
 .form-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-top: 1rem;
   text-align: center;
 }
@@ -139,14 +139,18 @@
 }
 
 /* Estilos para diferentes variantes */
+.form-container.login,
+.form-container.register,
+.form-container.reset {
+  align-items: center; /* centrar verticalmente los formularios por defecto */
+}
+
 .form-container.login {
   background: var(--background-login);
 }
-
 .form-container.register {
   background: var(--background-register);
 }
-
 .form-container.reset {
   background: var(--background-reset);
 }

@@ -69,7 +69,7 @@ export default function NewRecipe() {
   };
 
   return (
-    <div className={`form-container login`}>
+    <div className={`form-container login new-recipe-page`}>
       <Card className="form-card new-recipe-card">
         <div className="form-header">
           <h2 className="form-title">Nueva Receta</h2>
