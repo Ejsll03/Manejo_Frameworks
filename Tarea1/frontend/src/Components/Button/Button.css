@@ -1,32 +1,31 @@
 button,
 .custom-btn {
-  background: #1976d2;
   color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
   outline: none;
-  margin: 0 8px 0 0;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 button:hover,
 .custom-btn:hover {
-  background: #1565c0;
-  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.13);
-  transform: translateY(-2px) scale(1.04);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-button:focus,
-.custom-btn:focus {
-  outline: 2px solid #90caf9;
-  outline-offset: 2px;
+.custom-btn:focus,
+button:focus {
+  outline: 2px solid rgba(255, 183, 77, 0.28);
+  outline-offset: 3px;
 }
 .button-container {
   display: flex;
@@ -35,10 +34,8 @@ button:focus,
 }
 
 button {
-  width: 70%;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
+  width: auto;
+  margin-top: 0.5rem;
 }
 
 /* @keyframes pulse {
@@ -53,7 +50,111 @@ button {
   }
 } */
 
+.pi {
+  font-size: 1.15em;
+  margin-right: 0;
+}
+
+/* PrimeReact button specific fixes: center icon-only buttons */
+.p-button.icon-btn,
+.icon-btn.p-button {
+  padding: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* If PrimeReact renders a label span, hide it for icon-only buttons */
+.p-button.icon-btn .p-button-label,
+.icon-btn .p-button-label {
+  display: none !important;
+}
+
+/* Ensure the icon itself is centered and has no extra margin */
+.p-button .pi,
+.icon-btn .pi {
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* icon-only button variant */
+.icon-btn,
+.p-button .pi {
+  border-radius: 12px;
+}
+.icon-btn {
+  background: linear-gradient(180deg, #ffcf85, #ffb347);
+  color: #3a2b00;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(255, 179, 77, 0.12);
+}
+.icon-btn:hover {
+  background: linear-gradient(180deg, #ffd48a, #ffb84a);
+  transform: translateY(-3px);
+}
+
+/* Override PrimeReact default blue for our text buttons */
+.p-button.custom-btn,
+.custom-btn.p-button {
+  background: linear-gradient(180deg, #ffcf85, #ffb347) !important;
+  color: #3a2b00 !important;
+  border: none !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 20px rgba(255, 179, 77, 0.08) !important;
+}
+.p-button.custom-btn:hover,
+.custom-btn.p-button:hover {
+  background: linear-gradient(180deg, #ffd48a, #ffcf85) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(255, 179, 77, 0.12) !important;
+}
+.p-button.custom-btn .p-button-label,
+.custom-btn .p-button-label {
+  color: #3a2b00 !important;
+}
+
+/* Page-specific overrides: keep form buttons transparent */
+.p-button.custom-btn.btn-login,
+.custom-btn.btn-login,
+.p-button.custom-btn.btn-register,
+.custom-btn.btn-register,
+.p-button.custom-btn.btn-reset-password,
+.custom-btn.btn-reset-password {
+  background: transparent !important;
+  color: var(--form-color) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.p-button.custom-btn.btn-login .p-button-label,
+.custom-btn.btn-login .p-button-label,
+.p-button.custom-btn.btn-register .p-button-label,
+.custom-btn.btn-register .p-button-label,
+.p-button.custom-btn.btn-reset-password .p-button-label,
+.custom-btn.btn-reset-password .p-button-label {
+  color: var(--form-color) !important;
+}
+.p-button.custom-btn.btn-login:hover,
+.custom-btn.btn-login:hover,
+.p-button.custom-btn.btn-register:hover,
+.custom-btn.btn-register:hover,
+.p-button.custom-btn.btn-reset-password:hover,
+.custom-btn.btn-reset-password:hover {
+  background: transparent !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+  transform: translateY(-2px) !important;
 }

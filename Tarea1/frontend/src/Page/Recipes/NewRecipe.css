@@ -1,0 +1,138 @@
+.new-recipe-card {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredient-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.ingredient-input,
+.ingredient-qty {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.form-card .form-input,
+.form-card textarea.form-input {
+  width: 100%;
+}
+
+.ingredient-qty {
+  width: 100%;
+}
+
+.form-card .form-form {
+  max-width: 760px; /* limit content width so inputs don't stretch too much */
+  margin: 0 auto;
+}
+
+.form-card .form-input,
+.form-card textarea.form-input,
+.ingredient-input,
+.ingredient-qty {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Slightly smaller paddings for inputs to look balanced */
+.form-card .form-input,
+.ingredient-input,
+.ingredient-qty {
+  padding: 8px;
+}
+
+.ingredient-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.add-ingredient-wrap {
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .ingredient-row {
+    grid-template-columns: 1fr 120px 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ingredient-row {
+    grid-template-columns: 1fr;
+  }
+  .ingredient-qty {
+    width: 100%;
+  }
+  .ingredient-actions {
+    justify-content: flex-start;
+  }
+}
+
+/* Make the form sit higher on the page for this route */
+.form-container.login {
+  align-items: flex-start;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+/* Reduce vertical spacing in the form so it fits better */
+.form-card .form-form {
+  gap: 10px;
+}
+.form-card .form-title {
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+}
+
+/* Remove extra top margin in header only for this card */
+.form-container.login .form-card.new-recipe-card {
+  margin-top: 0 !important;
+}
+.form-container.login .form-header {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+/* lift the card a bit more on large screens */
+@media (min-width: 900px) {
+  .form-container.login .form-card.new-recipe-card {
+    margin-top: -28px !important;
+  }
+  .form-container.login {
+    padding-top: 0 !important;
+  }
+}
+
+/* Limit textarea heights to avoid overflow */
+.form-card textarea.form-input {
+  max-height: 160px;
+  overflow: auto;
+}
+
+.ingredient-row .ingredient-input,
+.ingredient-row .ingredient-qty {
+  padding: 6px;
+}
+
+/* Minor responsive tweaks */
+@media (min-width: 1200px) {
+  .new-recipe-card {
+    padding: 16px 120px;
+  }
+}

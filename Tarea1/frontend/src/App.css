@@ -1,15 +1,15 @@
 :root {
-  /* --form-color: #667eea;
-  --form-color-hover: #764ba2; */
-  --form-color: #111;
-  --form-color-hover: #fff;
+  /* Paleta cálida para el recetario */
+  --form-color: #3a2b00; /* texto de links */
+  --form-color-hover: #ffffff;
 
-  --form-title: #111;
+  --form-title: #4a2a00;
   --form-background-card: rgba(255, 255, 255, 0.95);
 
-  --background-login: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --background-register: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --background-reset: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  /* Tonos cálidos, papel y ocre */
+  --background-login: linear-gradient(135deg, #fffaf0 0%, #fff3e0 100%);
+  --background-register: linear-gradient(135deg, #fff7e6 0%, #ffe5b4 100%);
+  --background-reset: linear-gradient(135deg, #fff8f1 0%, #fff0d6 100%);
 }
 
 .App {

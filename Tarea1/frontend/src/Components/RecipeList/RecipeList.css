@@ -5,23 +5,23 @@
 }
 
 .recipe-list-item {
-  background: #fff;
+  background: linear-gradient(180deg, #fffdf6, #fff8f0);
   margin-bottom: 16px;
-  padding: 18px 22px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s, box-shadow 0.18s;
 }
 
 .recipe-list-item:hover {
-  box-shadow: 0 4px 16px rgba(33, 150, 243, 0.12);
-  background: #e3f2fd;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-list-item h3 {
   margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  color: #1976d2;
+  font-size: 1.15rem;
+  color: #6b3e00;
 }
 
 .recipe-list-item p {
