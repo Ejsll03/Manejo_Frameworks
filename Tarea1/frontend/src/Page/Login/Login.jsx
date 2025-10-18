@@ -10,6 +10,7 @@ export default function Login({ onLogin }) {
       const res = await fetch("http://localhost:5000/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 
@@ -17,9 +18,11 @@ export default function Login({ onLogin }) {
       if (res.ok) {
         navigate("/Dashboard");
         console.log("✅ Login exitoso", data);
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("username", data.username);
-        localStorage.setItem("email", data.email);
+        // Guardar info básica (opcional). La sesión vive en cookie httpOnly del servidor
+        if (data?.user) {
+          localStorage.setItem("username", data.user.username);
+          localStorage.setItem("email", data.user.email);
+        }
 
         // Llamar al callback si existe
         if (onLogin) {
@@ -57,7 +60,7 @@ export default function Login({ onLogin }) {
       {
         text: "Forgot your password?",
         href: "#",
-          className: "link-top",
+        className: "link-top",
         onClick: (e) => {
           e.preventDefault();
           console.log("Recuperar contraseña");
