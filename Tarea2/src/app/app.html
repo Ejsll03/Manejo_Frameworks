@@ -1,10 +1,10 @@
 <div class="app">
-  @if (authService.isLoggedIn()) {
   <header>
     <h1>{{ title }}</h1>
+    @if (authService.isLoggedIn()) {
     <button (click)="logout()">Cerrar Sesión</button>
+    }
   </header>
-  }
   <main>
     <router-outlet></router-outlet>
   </main>
