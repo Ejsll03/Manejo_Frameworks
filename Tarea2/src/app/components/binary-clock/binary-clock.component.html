@@ -1,0 +1,20 @@
+<div class="binary-clock">
+  <div class="column">
+    <h3>Horas</h3>
+    <div class="bits">
+      <div *ngFor="let bit of hoursBinary" class="bit" [class.active]="bit"></div>
+    </div>
+  </div>
+  <div class="column">
+    <h3>Minutos</h3>
+    <div class="bits">
+      <div *ngFor="let bit of minutesBinary" class="bit" [class.active]="bit"></div>
+    </div>
+  </div>
+  <div class="column">
+    <h3>Segundos</h3>
+    <div class="bits">
+      <div *ngFor="let bit of secondsBinary" class="bit" [class.active]="bit"></div>
+    </div>
+  </div>
+</div>

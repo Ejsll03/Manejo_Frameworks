@@ -1,0 +1,8 @@
+<svg width="200" height="200" class="progress-ring-clock">
+  <circle cx="100" cy="100" r="40" fill="none" stroke="#ccc" stroke-width="10"></circle>
+  <circle cx="100" cy="100" r="40" fill="none" stroke="#ff0000" stroke-width="10" stroke-dasharray="251.2" [attr.stroke-dashoffset]="251.2 * (1 - hoursProgress)" transform="rotate(-90 100 100)"></circle>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#ccc" stroke-width="10"></circle>
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#00ff00" stroke-width="10" stroke-dasharray="376.8" [attr.stroke-dashoffset]="376.8 * (1 - minutesProgress)" transform="rotate(-90 100 100)"></circle>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#ccc" stroke-width="10"></circle>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#0000ff" stroke-width="10" stroke-dasharray="502.4" [attr.stroke-dashoffset]="502.4 * (1 - secondsProgress)" transform="rotate(-90 100 100)"></circle>
+</svg>

@@ -1,0 +1,21 @@
+.clock-switcher {
+  text-align: center;
+  margin: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.sliders {
+  margin-bottom: 20px;
+}
+
+.sliders label {
+  display: block;
+  margin: 10px 0;
+}
+
+.clock-display {
+  margin-top: 20px;
+}

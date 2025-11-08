@@ -1,0 +1,17 @@
+.matrix-clock {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  color: #00ff00;
+  background: #000;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+  width: fit-content;
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.8; }
+}

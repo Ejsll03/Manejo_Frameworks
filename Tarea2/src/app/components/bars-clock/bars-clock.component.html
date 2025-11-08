@@ -1,0 +1,17 @@
+<div class="bars-clock">
+  <div class="bar-container">
+    <label>Horas</label>
+    <div class="bar" [style.width.%]="(hours / 23) * 100"></div>
+    <span>{{ hours }}</span>
+  </div>
+  <div class="bar-container">
+    <label>Minutos</label>
+    <div class="bar" [style.width.%]="(minutes / 59) * 100"></div>
+    <span>{{ minutes }}</span>
+  </div>
+  <div class="bar-container">
+    <label>Segundos</label>
+    <div class="bar" [style.width.%]="(seconds / 59) * 100"></div>
+    <span>{{ seconds }}</span>
+  </div>
+</div>

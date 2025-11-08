@@ -1,0 +1,36 @@
+.login {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login div {
+  margin-bottom: 15px;
+}
+
+.login label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.login button {
+  width: 100%;
+  padding: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}

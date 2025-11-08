@@ -1,0 +1,16 @@
+<div class="flip-clock">
+  <div class="time-group" [class]="animateHours">
+    <div class="digit">{{ hours[0] }}</div>
+    <div class="digit">{{ hours[1] }}</div>
+  </div>
+  <span>:</span>
+  <div class="time-group" [class]="animateMinutes">
+    <div class="digit">{{ minutes[0] }}</div>
+    <div class="digit">{{ minutes[1] }}</div>
+  </div>
+  <span>:</span>
+  <div class="time-group" [class]="animateSeconds">
+    <div class="digit">{{ seconds[0] }}</div>
+    <div class="digit">{{ seconds[1] }}</div>
+  </div>
+</div>
