@@ -15,7 +15,11 @@
     </div>
     <button type="submit">Registrarse</button>
   </form>
-  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
-  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+  @if (errorMessage) {
+  <p class="error">{{ errorMessage }}</p>
+  }
+  @if (successMessage) {
+  <p class="success">{{ successMessage }}</p>
+  }
   <p><a (click)="goToLogin()">¿Ya tienes cuenta? Inicia sesión</a></p>
 </div>

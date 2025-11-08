@@ -11,6 +11,8 @@
     </div>
     <button type="submit">Iniciar Sesión</button>
   </form>
-  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  @if (errorMessage) {
+  <p class="error">{{ errorMessage }}</p>
+  }
   <p><a (click)="goToRegister()">¿No tienes cuenta? Regístrate</a></p>
 </div>
