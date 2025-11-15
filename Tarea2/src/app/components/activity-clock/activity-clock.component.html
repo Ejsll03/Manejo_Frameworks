@@ -1,0 +1,7 @@
+<div class="activity-clock">
+  <div class="activity-display" [style.background-color]="activity().bgColor">
+    <div class="image" [innerHTML]="activity().image"></div>
+    <div class="text">{{ activity().text }}</div>
+    <div class="time">{{ currentTime() | date:'HH:mm:ss' }}</div>
+  </div>
+</div>
