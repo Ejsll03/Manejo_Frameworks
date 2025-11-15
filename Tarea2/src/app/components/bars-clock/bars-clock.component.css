@@ -1,26 +1,40 @@
 .bars-clock {
-  width: 300px;
-  margin: 20px auto;
+  width: 320px;
+  margin: 10px auto;
 }
 
 .bar-container {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .bar-container label {
-  display: block;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  margin-bottom: 6px;
+}
+
+.bar-wrapper {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  overflow: hidden;
 }
 
 .bar {
-  height: 20px;
-  background: #4caf50;
-  border-radius: 10px;
-  transition: width 0.5s;
+  height: 18px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 999px;
+  transition: width 0.4s ease-out;
+  box-shadow: 0 0 18px rgba(34, 197, 94, 0.4);
 }
 
 .bar-container span {
   display: block;
-  text-align: center;
-  margin-top: 5px;
+  text-align: right;
+  margin-top: 2px;
+  font-size: 0.8rem;
+  color: #a5b4fc;
 }
