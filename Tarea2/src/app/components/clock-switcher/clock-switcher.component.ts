@@ -8,11 +8,11 @@ import { BarsClockComponent } from '../bars-clock/bars-clock.component';
 import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
 import { FlipClockComponent } from '../flip-clock/flip-clock.component';
 import { HexClockComponent } from '../hex-clock/hex-clock.component';
-import { MatrixClockComponent } from '../matrix-clock/matrix-clock.component';
+import { ActivityClockComponent } from '../activity-clock/activity-clock.component';
 import { PolarClockComponent } from '../polar-clock/polar-clock.component';
 import { ProgressRingClockComponent } from '../progress-ring-clock/progress-ring-clock.component';
 import { WordClockComponent } from '../word-clock/word-clock.component';
-import { ColorClockComponent } from '../color-clock/color-clock.component';
+import { WaterGlassesClockComponent } from '../water-glasses-clock/water-glasses-clock.component';
 
 @Component({
   selector: 'app-clock-switcher',
@@ -26,11 +26,11 @@ import { ColorClockComponent } from '../color-clock/color-clock.component';
     BinaryClockComponent,
     FlipClockComponent,
     HexClockComponent,
-    MatrixClockComponent,
+    ActivityClockComponent,
     PolarClockComponent,
     ProgressRingClockComponent,
     WordClockComponent,
-    ColorClockComponent
+    WaterGlassesClockComponent
   ],
   templateUrl: './clock-switcher.component.html',
   styleUrl: './clock-switcher.component.css'
@@ -48,11 +48,11 @@ export class ClockSwitcherComponent {
     { value: 'binary', label: 'Binary Clock' },
     { value: 'flip', label: 'Flip Clock' },
     { value: 'hex', label: 'Hex Clock' },
-    { value: 'matrix', label: 'Matrix Clock' },
+    { value: 'activity', label: 'Activity Clock' },
     { value: 'polar', label: 'Polar Clock' },
     { value: 'progress', label: 'Progress Ring Clock' },
     { value: 'word', label: 'Word Clock' },
-    { value: 'color', label: 'Color Clock' }
+    { value: 'water', label: 'Water Glasses Clock' }
   ];
 
   constructor(private timeService: TimeService) {

@@ -1,29 +1,51 @@
-<div class="clock-switcher">
-  <div class="controls">
-    <select [(ngModel)]="selectedClock" (change)="onClockChange()">
-      <option *ngFor="let clock of clocks" [value]="clock.value">{{ clock.label }}</option>
-    </select>
-    <button (click)="updateToCurrent()">Actualizar a hora actual</button>
+<div class="clock-switcher app-shell">
+  <div class="clock-switcher-header">
+    <div>
+      <p class="muted-text">Elige un estilo y ajusta la hora manualmente</p>
+    </div>
+    <span class="pill-badge">Dashboard</span>
   </div>
-  <div class="sliders">
-    <label>Horas: <input type="range" min="0" max="23" [(ngModel)]="hours" (input)="onTimeChange()"></label>
-    <span>{{ hours }}</span>
-    <label>Minutos: <input type="range" min="0" max="59" [(ngModel)]="minutes" (input)="onTimeChange()"></label>
-    <span>{{ minutes }}</span>
-    <label>Segundos: <input type="range" min="0" max="59" [(ngModel)]="seconds" (input)="onTimeChange()"></label>
-    <span>{{ seconds }}</span>
+
+  <div class="controls-card">
+    <div class="controls">
+      <select [(ngModel)]="selectedClock" (change)="onClockChange()">
+        <option *ngFor="let clock of clocks" [value]="clock.value">{{ clock.label }}</option>
+      </select>
+      <button type="button" class="primary-btn" (click)="updateToCurrent()">Actualizar a hora actual</button>
+    </div>
+
+    <div class="sliders">
+      <div class="slider-row">
+        <label>Horas:</label>
+        <input type="range" min="0" max="23" [(ngModel)]="hours" (input)="onTimeChange()">
+        <span>{{ hours }}</span>
+      </div>
+      <div class="slider-row">
+        <label>Minutos:</label>
+        <input type="range" min="0" max="59" [(ngModel)]="minutes" (input)="onTimeChange()">
+        <span>{{ minutes }}</span>
+      </div>
+      <div class="slider-row">
+        <label>Segundos:</label>
+        <input type="range" min="0" max="59" [(ngModel)]="seconds" (input)="onTimeChange()">
+        <span>{{ seconds }}</span>
+      </div>
+    </div>
   </div>
-  <div class="clock-display" [ngSwitch]="selectedClock">
+
+  <div class="display-card">
+    <div class="clock-display" [ngSwitch]="selectedClock">
     <app-analog-clock *ngSwitchCase="'analog'"></app-analog-clock>
     <app-digital-clock *ngSwitchCase="'digital'"></app-digital-clock>
     <app-bars-clock *ngSwitchCase="'bars'"></app-bars-clock>
     <app-binary-clock *ngSwitchCase="'binary'"></app-binary-clock>
     <app-flip-clock *ngSwitchCase="'flip'"></app-flip-clock>
     <app-hex-clock *ngSwitchCase="'hex'"></app-hex-clock>
-    <app-matrix-clock *ngSwitchCase="'matrix'"></app-matrix-clock>
+    <app-activity-clock *ngSwitchCase="'activity'"></app-activity-clock>
     <app-polar-clock *ngSwitchCase="'polar'"></app-polar-clock>
     <app-progress-ring-clock *ngSwitchCase="'progress'"></app-progress-ring-clock>
     <app-word-clock *ngSwitchCase="'word'"></app-word-clock>
-    <app-color-clock *ngSwitchCase="'color'"></app-color-clock>
+    <app-water-glasses-clock *ngSwitchCase="'water'"></app-water-glasses-clock>
+    </div>
   </div>
 </div>
