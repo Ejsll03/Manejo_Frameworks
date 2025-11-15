@@ -24,9 +24,8 @@
 .time-group {
   display: flex;
 }
-
-[class^="flip-"] {
-  animation: flip 1s ease-in-out;
+.digit.flip {
+  animation: flip 0.6s ease-in-out;
 }
 
 @keyframes flip {

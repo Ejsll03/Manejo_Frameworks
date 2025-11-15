@@ -13,9 +13,12 @@ export class FlipClockComponent implements OnInit, OnDestroy {
   hours = '00';
   minutes = '00';
   seconds = '00';
-  animateHours = '';
-  animateMinutes = '';
-  animateSeconds = '';
+  animateHoursTens = '';
+  animateHoursOnes = '';
+  animateMinutesTens = '';
+  animateMinutesOnes = '';
+  animateSecondsTens = '';
+  animateSecondsOnes = '';
   private intervalId: any;
 
   constructor(private timeService: TimeService) {}
@@ -38,17 +41,32 @@ export class FlipClockComponent implements OnInit, OnDestroy {
     const newHours = now.getHours().toString().padStart(2, '0');
     const newMinutes = now.getMinutes().toString().padStart(2, '0');
     const newSeconds = now.getSeconds().toString().padStart(2, '0');
-    if (newHours !== this.hours) {
-      this.animateHours = 'flip-' + Date.now();
-      setTimeout(() => this.animateHours = '', 1000);
+    // Animar cada dígito por separado cuando cambie
+    if (newHours[0] !== this.hours[0]) {
+      this.animateHoursTens = 'flip-' + Date.now();
+      setTimeout(() => (this.animateHoursTens = ''), 600);
     }
-    if (newMinutes !== this.minutes) {
-      this.animateMinutes = 'flip-' + Date.now();
-      setTimeout(() => this.animateMinutes = '', 1000);
+    if (newHours[1] !== this.hours[1]) {
+      this.animateHoursOnes = 'flip-' + Date.now();
+      setTimeout(() => (this.animateHoursOnes = ''), 600);
     }
-    if (newSeconds !== this.seconds) {
-      this.animateSeconds = 'flip-' + Date.now();
-      setTimeout(() => this.animateSeconds = '', 1000);
+
+    if (newMinutes[0] !== this.minutes[0]) {
+      this.animateMinutesTens = 'flip-' + Date.now();
+      setTimeout(() => (this.animateMinutesTens = ''), 600);
+    }
+    if (newMinutes[1] !== this.minutes[1]) {
+      this.animateMinutesOnes = 'flip-' + Date.now();
+      setTimeout(() => (this.animateMinutesOnes = ''), 600);
+    }
+
+    if (newSeconds[0] !== this.seconds[0]) {
+      this.animateSecondsTens = 'flip-' + Date.now();
+      setTimeout(() => (this.animateSecondsTens = ''), 600);
+    }
+    if (newSeconds[1] !== this.seconds[1]) {
+      this.animateSecondsOnes = 'flip-' + Date.now();
+      setTimeout(() => (this.animateSecondsOnes = ''), 600);
     }
     this.hours = newHours;
     this.minutes = newMinutes;
