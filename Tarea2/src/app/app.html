@@ -1,11 +1,14 @@
 <div class="app">
-  <header>
-    <h1>{{ title }}</h1>
+  <header class="app-header">
+    <div class="app-header-left">
+      <span class="app-logo-dot"></span>
+      <h1 class="app-title">Panel de relojes</h1>
+    </div>
     @if (authService.isLoggedIn()) {
-    <button (click)="logout()">Cerrar Sesión</button>
+    <button class="primary-btn app-logout-btn" (click)="logout()">Cerrar sesión</button>
     }
   </header>
-  <main>
+  <main class="app-main">
     <router-outlet></router-outlet>
   </main>
 </div>

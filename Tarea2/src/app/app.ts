@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = 'Tarea2';
+  protected readonly title = '';
   authService = inject(AuthService);
   router = inject(Router);
 

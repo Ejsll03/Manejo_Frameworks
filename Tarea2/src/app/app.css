@@ -1,0 +1,58 @@
+ .app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.app-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 40px;
+	gap: 16px;
+}
+
+.app-header-left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.app-logo-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 999px;
+	background: #22c55e;
+	box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+}
+
+.app-title {
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: #e5e7eb;
+}
+
+.app-logout-btn {
+	padding-inline: 1.1rem;
+	padding-block: 0.4rem;
+	font-size: 0.9rem;
+}
+
+.app-main {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 24px 32px 40px;
+}
+
+@media (max-width: 900px) {
+	.app-header {
+		padding-inline: 16px;
+	}
+
+	.app-main {
+		padding-inline: 12px;
+	}
+}
+
