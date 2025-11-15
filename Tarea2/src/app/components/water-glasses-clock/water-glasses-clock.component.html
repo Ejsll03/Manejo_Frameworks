@@ -1,0 +1,46 @@
+<div class="water-glasses-clock">
+  <div class="glasses">
+    <div class="glass">
+      <div class="label">Segundos</div>
+      <div class="glass-container">
+        <div class="water" [style.height.%]="secondsLevel()"></div>
+        <div class="drops">
+          <div class="drop drop1"></div>
+          <div class="drop drop2"></div>
+          <div class="drop drop3"></div>
+          <div class="drop drop4"></div>
+          <div class="drop drop5"></div>
+        </div>
+      </div>
+    </div>
+    <div class="glass">
+      <div class="label">Minutos</div>
+      <div class="glass-container">
+        <div class="water" [style.height.%]="minutesLevel()"></div>
+        <div class="drops">
+          <div class="drop drop1"></div>
+          <div class="drop drop2"></div>
+          <div class="drop drop3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="glass">
+      <div class="label">Horas</div>
+      <div class="glass-container">
+        <div class="water" [style.height.%]="hoursLevel()"></div>
+        <div class="drops">
+          <div class="drop drop1"></div>
+          <div class="drop drop2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="transfer-drops">
+    @if (transferSecondToMinute()) {
+    <div class="transfer-drop second-to-minute"></div>
+    }
+    @if (transferMinuteToHour()) {
+    <div class="transfer-drop minute-to-hour"></div>
+    }
+  </div>
+</div>

@@ -1,0 +1,211 @@
+.water-glasses-clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+}
+
+.transfer-drops {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.transfer-drop {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #4a90e2;
+  border-radius: 50%;
+}
+
+.second-to-minute {
+  animation: transferSecondToMinute 2s ease-in-out forwards;
+}
+
+.minute-to-hour {
+  animation: transferMinuteToHour 2s ease-in-out forwards;
+}
+
+@keyframes transferSecondToMinute {
+  0% {
+    left: 30px;
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    left: 110px;
+    top: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes transferMinuteToHour {
+  0% {
+    left: 110px;
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    left: 190px;
+    top: 200px;
+    opacity: 0;
+  }
+}
+
+.glasses {
+  display: flex;
+  gap: 32px;
+  padding: 16px 12px 8px;
+}
+
+.glass {
+  text-align: center;
+  filter: drop-shadow(0 10px 25px rgba(15, 23, 42, 0.9));
+}
+
+.label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #e5e7eb;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.glass-container {
+  width: 70px;
+  height: 210px;
+  border-radius: 18px 18px 18px 18px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 0, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+  box-shadow:
+    inset 0 0 0 1px rgba(148, 163, 184, 0.35),
+    inset 0 16px 28px rgba(15, 23, 42, 0.95),
+    0 12px 28px rgba(15, 23, 42, 0.9);
+}
+
+.glass-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(148, 163, 184, 0.28), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  transition: height 0.5s ease;
+  animation: waterSurface 3s infinite ease-in-out;
+  border-top: 2px solid rgba(239, 246, 255, 0.7);
+  box-shadow: 0 -8px 14px rgba(37, 99, 235, 0.45);
+}
+
+@keyframes waterSurface {
+  0%, 100% {
+    border-top-color: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    border-top-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.drops {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #bfdbfe 0, #60a5fa 60%, #1d4ed8 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.9);
+}
+
+.glass:nth-child(1) .drop { /* Segundos */
+  animation: dropFall 3s infinite linear;
+}
+
+.glass:nth-child(1) .drop1 { animation-delay: 0s; left: 20%; }
+.glass:nth-child(1) .drop2 { animation-delay: 0.6s; left: 40%; }
+.glass:nth-child(1) .drop3 { animation-delay: 1.2s; left: 60%; }
+.glass:nth-child(1) .drop4 { animation-delay: 1.8s; left: 80%; }
+.glass:nth-child(1) .drop5 { animation-delay: 2.4s; left: 30%; }
+
+.glass:nth-child(2) .drop { /* Minutos */
+  animation: dropFallMin 30s infinite linear;
+}
+
+.glass:nth-child(2) .drop1 { animation-delay: 0s; left: 25%; }
+.glass:nth-child(2) .drop2 { animation-delay: 10s; left: 50%; }
+.glass:nth-child(2) .drop3 { animation-delay: 20s; left: 75%; }
+
+.glass:nth-child(3) .drop { /* Horas */
+  animation: dropFallHour 180s infinite linear;
+}
+
+.glass:nth-child(3) .drop1 { animation-delay: 0s; left: 30%; }
+.glass:nth-child(3) .drop2 { animation-delay: 90s; left: 70%; }
+
+@keyframes dropFall {
+  0% {
+    top: -10px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 210px;
+    opacity: 0;
+  }
+}
+
+@keyframes dropFallMin {
+  0% {
+    top: -10px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 210px;
+    opacity: 0;
+  }
+}
+
+@keyframes dropFallHour {
+  0% {
+    top: -10px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 210px;
+    opacity: 0;
+  }
+}
