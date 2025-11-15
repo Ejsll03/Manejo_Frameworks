@@ -34,18 +34,42 @@
   </div>
 
   <div class="display-card">
-    <div class="clock-display" [ngSwitch]="selectedClock">
-    <app-analog-clock *ngSwitchCase="'analog'"></app-analog-clock>
-    <app-digital-clock *ngSwitchCase="'digital'"></app-digital-clock>
-    <app-bars-clock *ngSwitchCase="'bars'"></app-bars-clock>
-    <app-binary-clock *ngSwitchCase="'binary'"></app-binary-clock>
-    <app-flip-clock *ngSwitchCase="'flip'"></app-flip-clock>
-    <app-hex-clock *ngSwitchCase="'hex'"></app-hex-clock>
-    <app-activity-clock *ngSwitchCase="'activity'"></app-activity-clock>
-    <app-polar-clock *ngSwitchCase="'polar'"></app-polar-clock>
-    <app-progress-ring-clock *ngSwitchCase="'progress'"></app-progress-ring-clock>
-    <app-word-clock *ngSwitchCase="'word'"></app-word-clock>
-    <app-water-glasses-clock *ngSwitchCase="'water'"></app-water-glasses-clock>
+    <div class="clock-display">
+      @switch (selectedClock) {
+        @case ('analog') {
+          <app-analog-clock />
+        }
+        @case ('digital') {
+          <app-digital-clock />
+        }
+        @case ('bars') {
+          <app-bars-clock />
+        }
+        @case ('binary') {
+          <app-binary-clock />
+        }
+        @case ('flip') {
+          <app-flip-clock />
+        }
+        @case ('hex') {
+          <app-hex-clock />
+        }
+        @case ('activity') {
+          <app-activity-clock />
+        }
+        @case ('polar') {
+          <app-polar-clock />
+        }
+        @case ('progress') {
+          <app-progress-ring-clock />
+        }
+        @case ('word') {
+          <app-word-clock />
+        }
+        @case ('water') {
+          <app-water-glasses-clock />
+        }
+      }
     </div>
   </div>
 </div>
