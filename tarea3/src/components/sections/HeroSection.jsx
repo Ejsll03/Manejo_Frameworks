@@ -7,13 +7,15 @@ import useReveal from '../../hooks/useReveal';
 
 const HeroSection = ({ user }) => {
   const heroRef = useReveal({ threshold: 0.35 });
+  const heroSkills = Array.isArray(SKILL_DATA) ? SKILL_DATA.slice(0, 3) : [];
+  const displayName = user?.name ?? 'visitante';
 
   return (
     <section ref={heroRef} className="hero reveal scroll-scene scroll-fast" id="hero">
       <div>
-        <p className="eyebrow">Hola {user.name}</p>
-        <h1>Ingeniero(a) en computación que mezcla arquitectura de software con narrativas claras y copilotos de IA.</h1>
-        <p>8+ años desplegando servicios para SaaS y fintech, traduciendo decisiones de infraestructura en experiencias tangibles para equipos de producto y operaciones.</p>
+        <p className="eyebrow">Hola {displayName}</p>
+        <h1>Proyecto Tarea 3 – Manejo de Frameworks</h1>
+        <p>Este proyecto forma parte de mis actividades académicas y demuestra el uso de conceptos fundamentales de desarrollo web, organización de código y manejo de frameworks o herramientas modernas.</p>
         <div className="hero-actions">
           <Button label="Ver métricas" icon="pi pi-chart-bar" rounded onClick={() => scrollToId('metrics')} />
           <Button label="Repos recientes" icon="pi pi-github" severity="secondary" rounded onClick={() => scrollToId('repos')} />
@@ -21,7 +23,8 @@ const HeroSection = ({ user }) => {
       </div>
       <Card className="hero-card" title="Panel de señales">
         <div className="hero-card-grid">
-          {SKILL_DATA.slice(0, 3).map((skill) => (
+          {heroSkills.length === 0 && <p className="hero-card-empty">Sin métricas cargadas.</p>}
+          {heroSkills.map((skill) => (
             <div key={skill.label} className="hero-card-item">
               <span>{skill.label}</span>
               <strong>{skill.value}%</strong>
