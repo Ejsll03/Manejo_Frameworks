@@ -2,7 +2,7 @@ const Footer = () => (
   <footer className="footer">
     <div>
       <strong>Portfolio Studio</strong>
-      <span>Desarrollado por Erick Semprún &copy; 2024</span>
+      <p>Desarrollado por Erick Semprún &copy; 2025</p>
     </div>
     <div className="footer-links">
       <a href="mailto:erick.31085525@uru.edu">erick.31085525@uru.edu</a>
