@@ -21,6 +21,7 @@ const AuthCard = ({ mode, formData, message, onChange, onSubmit, onSwitch }) => 
               name="name"
               value={formData.name}
               onChange={onChange}
+              maxLength={25}
               required
               className="auth-control"
             />
@@ -52,6 +53,7 @@ const AuthCard = ({ mode, formData, message, onChange, onSubmit, onSwitch }) => 
               name="password"
               value={formData.password}
               onChange={onChange}
+              maxLength={25}
               feedback={false}
               toggleMask
               className="auth-password-inner"
