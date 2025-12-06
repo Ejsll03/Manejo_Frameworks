@@ -27,6 +27,8 @@ function App() {
 	const [repos, setRepos] = useState([]);
 	const [repoStatus, setRepoStatus] = useState('idle');
 
+	const AUTH_FIELD_LIMIT = 25;
+
 	useEffect(() => {
 		if (user) {
 			localStorage.setItem('portfolioSessionPrime', JSON.stringify(user));
@@ -67,7 +69,8 @@ function App() {
 
 	const handleInput = (event) => {
 		const { name, value } = event.target;
-		setFormData((prev) => ({ ...prev, [name]: value }));
+		const constrainedValue = name === 'name' || name === 'password' ? value.slice(0, AUTH_FIELD_LIMIT) : value;
+		setFormData((prev) => ({ ...prev, [name]: constrainedValue }));
 	};
 
 	const handleAuth = (event) => {
@@ -85,7 +88,6 @@ function App() {
 
 			const newUser = { name: formData.name.trim(), email, password };
 			localStorage.setItem('portfolioCredentialsPrime', JSON.stringify(newUser));
-			setUser({ name: newUser.name, email: newUser.email });
 			setFormData({ name: '', email: '', password: '' });
 			setAuthMode('login');
 			setMessage('Registro completado. Usa tus credenciales para ingresar.');
